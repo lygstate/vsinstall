@@ -1,0 +1,46 @@
+HKLM - SOFTWARE
+Classes +*
+  Installer
+    +Assemblies
+    +Features
+      -1D5E
+    Products
+      Only need to install VS2010(x86/x64) Redistributable Runtime
+      + VS 2010 Standard Version(x86/x64)
+        All sub-entries
+      - All Others
+    -UpgradeCodes
+  -TypeLib
+  -VisualStudio.VCProjectEngine.10.0
+  -Wow6432Node
+Microsoft
+  -DrWatson
+  -Fusion
+  -Microsoft SDKs
+  MSBuild
+  VisualStudio
+  -Windows
+Wow6432Node
+  Microsoft
+    -.NETFramework
+    -DevDiv
+    -Microsoft SDKs
+    MSBuild
+    -Updates
+    VisualStudio
+      10.0
+        -CLSID
+        +Setup
+        -VC
+        +Source Directories 
+    -Windows
+
+HKLM - SYSTEM
+  CurrentControlSet
+    Session Manager
+      Environment+
+
+
+-HKEY_USERS
+
+
