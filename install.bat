@@ -26,5 +26,4 @@ del "%temp%\getadmin.vbs"
 call "%~dp0install_runtime.bat"
 call "%~dp0vs2010 msbuild-install.bat"
 call "%~dp0vs2010 assembly-install.bat"
-call "%~dp0install_qbs.bat"
 pause
