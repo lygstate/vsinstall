@@ -4,8 +4,6 @@ set "VSDIR=%CD%"
 set PATH="%VSDIR%\Microsoft SDKs\Windows\V7.0A\Bin";"%VSDIR%\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools";%PATH%
 
 cd /d %~dp0
-::http://ss64.com/vb/syntax-replace.html
-:: NOTE: doesn't support for UTF16
 set VSDIR_REG=%VSDIR:\=\\%
 cscript //Nologo replace.vbs "MicrosoftSDKs registry-install-x64.reg.in" "MicrosoftSDKs registry-install-x64.reg" "@VSDIR@" "%VSDIR_REG%"
 cscript //Nologo replace.vbs "vs2010 registry-install-x64.reg.in" "vs2010 registry-install-x64.reg" "@VSDIR@" "%VSDIR_REG%"
