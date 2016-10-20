@@ -1,7 +1,7 @@
 @echo on
 cd /d %~dp0..
 set "VSDIR=%CD%"
-set PATH="%VSDIR%\Microsoft SDKs\Windows\V7.0A\Bin";"%VSDIR%\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools";%PATH%
+set PATH="%VSDIR%\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools";%PATH%
 
 cd /d %~dp0
 set VSDIR_REG=%VSDIR:\=\\%
