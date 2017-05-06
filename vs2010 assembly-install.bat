@@ -11,9 +11,9 @@ cscript //Nologo replace.vbs "MicrosoftSDKs registry-install.reg.in" "MicrosoftS
 cscript //Nologo replace.vbs "vs2010 registry-install.reg.in" "vs2010 registry-install.reg" "@VSDIR@" "%VSDIR_REG%"
 
 "%SYSTEM_DIR_32%\regedit.exe" -s "MicrosoftSDKs registry-install.reg"
+regedit.exe -s "MicrosoftSDKs registry-install.reg"
 "%SYSTEM_DIR_32%\regedit.exe" -s "vs2010 registry-install.reg"
 
-regedit.exe -s "vs2010 registry-install-both.reg.out"
 del *.reg
 
 gacutil -f -i "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.VCProjectEngine.dll"
