@@ -2,8 +2,14 @@
 call "%~dp0/prepare.bat"
 
 set PATH="%VSDIR%\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools";%PATH%
+goto :start
+cd /d "%VSDIR%\Microsoft Visual Studio 10.0\"
+for /R %%i in (*.dll *.exe) do (
+call :installSingle "%%i"
+)
+pause
 
-
+:start
 ::call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\"
 ::call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\"
 ::call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\ReferenceAssemblies\"
