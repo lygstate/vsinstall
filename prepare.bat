@@ -8,4 +8,8 @@ set "USED_PROGRAM_FILES_32=%ProgramFiles(x86)%"
 if not exist "%USED_PROGRAM_FILES_32%" (
   set "USED_PROGRAM_FILES_32=%ProgramFiles%"
 )
-echo %SYSTEM_DIR_32% %USED_PROGRAM_FILES_32%
+
+::echo %SYSTEM_DIR_32% %USED_PROGRAM_FILES_32%
+cd /d "%~dp0.."
+set "VSDIR=%CD%"
+cd /d "%~dp0"

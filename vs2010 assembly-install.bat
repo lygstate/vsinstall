@@ -1,20 +1,8 @@
-@echo on
+@echo off
 call "%~dp0/prepare.bat"
 
-cd /d %~dp0..
-set "VSDIR=%CD%"
 set PATH="%VSDIR%\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools";%PATH%
 
-cd /d %~dp0
-set VSDIR_REG=%VSDIR:\=\\%
-cscript //Nologo replace.vbs "MicrosoftSDKs registry-install.reg.in" "MicrosoftSDKs registry-install.reg" "@VSDIR@" "%VSDIR_REG%"
-cscript //Nologo replace.vbs "vs2010 registry-install.reg.in" "vs2010 registry-install.reg" "@VSDIR@" "%VSDIR_REG%"
-
-"%SYSTEM_DIR_32%\regedit.exe" -s "MicrosoftSDKs registry-install.reg"
-regedit.exe -s "MicrosoftSDKs registry-install.reg"
-"%SYSTEM_DIR_32%\regedit.exe" -s "vs2010 registry-install.reg"
-
-del *.reg
 cd /d "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\"
 call :installAll
 cd /d "%VSDIR%\Microsoft Visual Studio 10.0\Common7\Tools\ProjectComponents\"
@@ -34,7 +22,6 @@ call :installSingle "%ProgramFiles%\Reference Assemblies\Microsoft\UDDI\v2.1\bin
 call :installSingle "%ProgramFiles%\Reference Assemblies\Microsoft\WindowsMediaServices\v9.6\Microsoft.windowsmediaservices.dll"
 call :installSingle "%ProgramFiles%\Reference Assemblies\Microsoft\FSRM\v7.0\srmlib.dll"
 
-pause
 goto :eof
 :installAll
 for %%i in (*) do (
