@@ -3,10 +3,12 @@ call "%~dp0/prepare.bat"
 
 set PATH="%VSDIR%\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools";%PATH%
 
-cd /d "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\"
-call :installAll
-cd /d "%VSDIR%\Microsoft Visual Studio 10.0\Common7\Tools\ProjectComponents\"
-call :installAll
+
+::call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\"
+::call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\"
+::call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\ReferenceAssemblies\"
+call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\"
+call :installAll "%VSDIR%\Microsoft Visual Studio 10.0\Common7\Tools\ProjectComponents\"
 
 call :installSingle "%VSDIR%\Microsoft Visual Studio 10.0\VC\bin\amd64\XDCMake.exe"
 call :installSingle "%VSDIR%\Microsoft Visual Studio 10.0\VC\bin\xdcmake.exe"
@@ -24,6 +26,7 @@ call :installSingle "%ProgramFiles%\Reference Assemblies\Microsoft\FSRM\v7.0\srm
 
 goto :eof
 :installAll
+cd /d "%~1"
 for %%i in (*) do (
 echo Install %CD%\%%i
 gacutil -f -i %%i > nul
