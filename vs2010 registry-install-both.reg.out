@@ -1,0 +1,7 @@
+; VS 2010 MSBuild
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSBuild\ToolsVersions\4.0]
+"VCTargetsPath"="$(MSBuildExtensionsPath32)\\Microsoft.Cpp\\v4.0\\"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\MSBuild\ToolsVersions\4.0]
+"VCTargetsPath"="$(MSBuildExtensionsPath32)\\Microsoft.Cpp\\v4.0\\"
