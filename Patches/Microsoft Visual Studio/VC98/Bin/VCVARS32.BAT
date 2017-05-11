@@ -1,20 +1,20 @@
 @echo off
 cd /d "%~dp0"
 cd ..\..
-set _MICROSOFT_VS_ROOT=%CD%
+set "_MICROSOFT_VS_ROOT=%CD%"
 rem
 rem Root of Visual Developer Studio Common files.
-set VSCommonDir=%_MICROSOFT_VS_ROOT%\Common
+set "VSCommonDir=%_MICROSOFT_VS_ROOT%\Common"
 
 rem
 rem Root of Visual Developer Studio installed files.
 rem
-set MSDevDir=%_MICROSOFT_VS_ROOT%\Common\msdev98
+set "MSDevDir=%_MICROSOFT_VS_ROOT%\Common\msdev98"
 
 rem
 rem Root of Visual C++ installed files.
 rem
-set MSVCDir=%_MICROSOFT_VS_ROOT%\VC98
+set "MSVCDir=%_MICROSOFT_VS_ROOT%\VC98"
 
 rem
 rem VcOsDir is used to help create either a Windows 95 or Windows NT specific path.
