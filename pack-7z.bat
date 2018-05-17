@@ -1,3 +1,4 @@
 cd %~dp0..
-"%ProgramFiles%\7-Zip\7z" a -t7z ..\vs.7z . -xr@".\vsinstall\excludeList.txt"
+del ..\vs.7z 2>nul
+7z a -t7z ..\vs.7z . -xr@".\vsinstall\excludeList.txt"  -mx1 -mmt=on
 pause

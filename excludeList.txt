@@ -4,3 +4,11 @@ Microsoft Visual Studio 9.0\.git
 Microsoft Visual Studio 10.0\.git
 MSBuild\.git
 Reference Assemblies\.git
+vs2010-patches
+Microsoft Visual Studio.7z
+vs6 Redistributable.7z
+vs2005 Redistributable.7z
+vs2008 Debug Runtime.7z
+vs2008 Redistributable.7z
+vs2010 Debug Runtime.7z
+vs2010 Redistributable.7z
