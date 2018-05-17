@@ -11,4 +11,6 @@ cscript //Nologo replace.vbs "visual-studio-registry-install.reg.in" "visual-stu
 "%SYSTEM_DIR_32%\regedit.exe" -s "MicrosoftSDKs registry-install.reg"
 regedit.exe -s "MicrosoftSDKs registry-install.reg"
 
-del *.reg
+del *.reg 2>nul
+
+@echo Registry install finished

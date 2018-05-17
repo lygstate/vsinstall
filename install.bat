@@ -22,7 +22,7 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 :--------------------------------------
 
-del "%temp%\getadmin.vbs"
+del /F "%temp%\getadmin.vbs" 2>nul
 call "%~dp0install_runtime.bat"
 call "%~dp0vs-registry-install.bat
 pause

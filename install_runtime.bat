@@ -14,3 +14,4 @@ cd /d "%VSDIR%\"
 
 "vs2010 Redistributable\vcredist_x86.exe" /q /norestart
 "vs2010 Redistributable\vcredist_x64.exe" /q /norestart
+@echo Runtime installed finished
