@@ -3,6 +3,7 @@ Microsoft Visual Studio\.git
 Microsoft Visual Studio 9.0\.git
 Microsoft Visual Studio 10.0\.git
 MSBuild\.git
+vsinstall\.git
 Reference Assemblies\.git
 vs2010-patches
 Microsoft Visual Studio.7z

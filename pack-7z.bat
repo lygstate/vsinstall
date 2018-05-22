@@ -1,4 +1,4 @@
 cd %~dp0..
-del ..\vs.7z 2>nul
-7z a -t7z ..\vs.7z . -xr@".\vsinstall\excludeList.txt"  -mx1 -mmt=on
+del ..\vs.zip 2>nul
+7z a -tzip ..\vs.zip . -xr@".\vsinstall\excludeList.txt"  -mx1 -mmt=on
 pause
