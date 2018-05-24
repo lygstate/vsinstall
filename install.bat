@@ -28,7 +28,7 @@ del /F "%temp%\getadmin.vbs" 2>nul
 
 call "%~dp0install_runtime.bat"
 
-@echo Install Visual C++ 6.0 & Visual C++ 2008
+@echo Install Visual C++ 6.0 and Visual C++ 2008
 call "%~dp0vs-registry-install.bat
 
 @echo Install Daffodil for Visual Studio
