@@ -23,6 +23,15 @@ if '%errorlevel%' NEQ '0' (
 :--------------------------------------
 
 del /F "%temp%\getadmin.vbs" 2>nul
+
+@echo Install Visual C++ Runtime library
+
 call "%~dp0install_runtime.bat"
+
+@echo Install Visual C++ 6.0 & Visual C++ 2008
 call "%~dp0vs-registry-install.bat
+
+@echo Install Daffodil for Visual Studio
+call "%~dp0install-msi.bat"
+
 pause
