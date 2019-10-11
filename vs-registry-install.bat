@@ -1,4 +1,7 @@
-@echo off
+@echo on
+
+call :GetVSCommonToolsDir
+
 call "%~dp0/prepare.bat"
 
 set VSDIR_REG=%VSDIR:\=\\%
@@ -17,4 +20,32 @@ regedit.exe -s "MicrosoftSDKs registry-install.reg"
 
 del *.reg 2>nul
 
-@echo Registry install finished
+goto :eof
+
+@REM -----------------------------------------------------------------------
+:GetVSCommonToolsDir
+@call :GetVSCommonToolsDirHelper HKLM\SOFTWARE\Microsoft 2>nul
+@call :GetVSCommonToolsDirHelper HKCU\SOFTWARE\Microsoft 2>nul
+@call :GetVSCommonToolsDirHelper HKLM\SOFTWARE\Wow6432Node\Microsoft 2>nul
+@call :GetVSCommonToolsDirHelper HKCU\SOFTWARE\Wow6432Node\Microsoft 2>nul
+@exit /B 0
+
+:GetVSCommonToolsDirHelper
+@set VC100DIR=
+@for /F "tokens=1,2*" %%i in ('reg query "%1\VisualStudio\SxS\VC7" /v "10.0"') do @(
+  @if "%%i"=="10.0" (
+    @set "VC100DIR=%%k"
+  )
+)
+@call :UpdateVC100Dir %1
+@exit /B 0
+
+
+:UpdateVC100Dir
+@echo UpdateVC100Dir %1 %VC100DIR%
+@if "%VC100DIR%"=="" exit /B 1
+@cd "%VC100DIR%.."
+reg delete "%1\VisualStudio\SxS\VS7" /v "10.0" /f
+reg add "%1\VisualStudio\SxS\VS7" /v "10.0" /t REG_SZ /f /d "%CD%\\"
+
+@exit /B 0
